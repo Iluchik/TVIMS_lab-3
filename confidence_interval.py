@@ -18,7 +18,7 @@ def confidence_interval(mx, sigma, n):
 	percentiles = [0.9, 0.95, 0.99]
 	for per in percentiles:
 		z = stats.norm.ppf(per, 0, 1)
-		answer[f"{per * 100}%"] = [mx - z * const, mx + z * const]
+		answer[f"{per * 100}%"] = [round(mx - z * const, 5), round(mx + z * const, 5)]
 	return answer
 
 simple_sample = []
